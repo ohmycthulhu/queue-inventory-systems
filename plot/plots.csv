@@ -1,0 +1,4 @@
+file,folder,colVar,colCon,cols
+../data/data_1.csv,first,beta,alpha,"P_sys,P_ser,P_p,P_f,BC_av,L_f,L_o"
+../data/data_2.csv,second,beta,alpha,"P_sys,P_ser,P_p,P_f,BC_av,L_f,L_o"
+../data/data_3.csv,third,beta,alpha,"P_sys,P_ser,P_p,P_f,BC_av,L_f,L_o"
