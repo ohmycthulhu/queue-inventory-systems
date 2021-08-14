@@ -15,7 +15,7 @@ plot_data <- function  (folder, colsVar, colsCon, cols, data, labels_dict) {
         c(),
         c(),
         ylab=labels_dict(col),
-        xlab=colsVar,
+        xlab=get_label(greek_letters, colsVar),
         xlim=xLim,
         ylim=yLim
       )
@@ -29,8 +29,6 @@ plot_data <- function  (folder, colsVar, colsCon, cols, data, labels_dict) {
         xVar = d[,colsVar]
         yVar = d[,col]
         
-        print(val)
-        
         lines(
           xVar,
           yVar,
@@ -42,7 +40,7 @@ plot_data <- function  (folder, colsVar, colsCon, cols, data, labels_dict) {
         i = i %% length(pchs) + 1
       }
       
-      legend(x = xLim[2] - 2.5, # Position
+      legend(x = xLim[2] - (xLim[2] - xLim[1]) * .28, # Position
              y = get_legend_position(data[, colsVar], data[, col], yLim[1], yLim[2]),
              legend = get_legends_text(vals, colsCon),  # Legend texts
              pch = pchs,           # Line types
@@ -66,8 +64,6 @@ greek_letters <- c(c('alpha', 'α'), c('beta', 'β'), c('gamma', 'γ'), c('sigma
 get_dict_value <- function (dict, key, default) {
   result = default
   for (i in ((1:(length(dict) / 2)) * 2 - 1)) {
-    print(key)
-    print(dict[i])
     if (key == dict[i]) {
       result = dict[i + 1]
       break;

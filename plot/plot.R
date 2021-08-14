@@ -33,7 +33,6 @@ cols_labels = function (label) {
 
 for (pI in 1:dim(plots)[1]) {
   p = plots[pI,]
-  print(p$file)
   data = read.csv(p$file)
   cols = unlist(strsplit(p$cols, ','))
   
